@@ -1,14 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace WyriHaximus\HtmlCompress\Tests\Compressor;
+namespace WyriHaximus\Compress\Tests;
 
-use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
-use WyriHaximus\TestUtilities\TestCase;
+use WyriHaximus\Compress\CompressorInterface;
+use WyriHaximus\Compress\ReturnCompressor;
 
 /**
  * @internal
  */
-final class ReturnCompressorTest extends TestCase
+final class ReturnCompressorTest extends AbstractCompressorTest
 {
     public function providerReturn(): iterable
     {
@@ -31,5 +31,10 @@ final class ReturnCompressorTest extends TestCase
     {
         $actual = (new ReturnCompressor())->compress($input);
         self::assertSame($expected, $actual);
+    }
+
+    protected function getCompressor(): CompressorInterface
+    {
+        return new ReturnCompressor();
     }
 }

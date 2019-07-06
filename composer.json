@@ -1,8 +1,7 @@
 {
-    "name": "wyrihaximus/html-compress",
-    "description": "Compress/minify your HTML",
+    "name": "wyrihaximus/compress",
+    "description": "Compress marker interface and utility compressors",
     "keywords": [
-        "html",
         "compress"
     ],
     "license": "MIT",
@@ -14,16 +13,7 @@
         }
     ],
     "require": {
-        "php": "^7.2",
-        "jalle19/php-yui-compressor": "^1.0",
-        "linkorb/jsmin-php": "1.0.0",
-        "matthiasmullie/minify": "^1.3",
-        "meenie/javascript-packer": "1.1",
-        "natxet/cssmin": "^3.0.5",
-        "patchwork/jsqueeze": "~2.0",
-        "tedivm/jshrink": "^1.3",
-        "voku/html-min": "^3.1.8",
-        "websharks/css-minifier": "150820"
+        "php": "^7.2"
     },
     "require-dev": {
         "wyrihaximus/test-utilities": "^1.2"
@@ -36,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "WyriHaximus\\HtmlCompress\\": "src/"
+            "WyriHaximus\\Compress\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "WyriHaximus\\HtmlCompress\\Tests\\": "tests/"
+            "WyriHaximus\\Compress\\Tests\\": "tests/"
         }
     },
     "scripts": {

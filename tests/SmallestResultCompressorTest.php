@@ -1,9 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace WyriHaximus\HtmlCompress\Tests\Compressor;
+namespace WyriHaximus\Compress\Tests;
 
-use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
-use WyriHaximus\HtmlCompress\Compressor\SmallestResultCompressor;
+use WyriHaximus\Compress\SmallestResultCompressor;
 use WyriHaximus\TestUtilities\TestCase;
 
 /**
@@ -13,9 +12,14 @@ final class SmallestResultCompressorTest extends TestCase
 {
     public function provideCompressors(): iterable
     {
-        $compressorA = new class() implements CompressorInterface {
+        $compressorA = new class() implements CalledCompressorInterface {
             /** @var bool */
             public $called = false;
+
+            public function getCalled(): bool
+            {
+                return $this->called;
+            }
 
             public function compress(string $string): string
             {
@@ -24,9 +28,14 @@ final class SmallestResultCompressorTest extends TestCase
                 return 'ab';
             }
         };
-        $compressorB = new class() implements CompressorInterface {
+        $compressorB = new class() implements CalledCompressorInterface {
             /** @var bool */
             public $called = false;
+
+            public function getCalled(): bool
+            {
+                return $this->called;
+            }
 
             public function compress(string $string): string
             {
@@ -35,9 +44,14 @@ final class SmallestResultCompressorTest extends TestCase
                 return 'efgh';
             }
         };
-        $compressorC = new class() implements CompressorInterface {
+        $compressorC = new class() implements CalledCompressorInterface {
             /** @var bool */
             public $called = false;
+
+            public function getCalled(): bool
+            {
+                return $this->called;
+            }
 
             public function compress(string $string): string
             {
@@ -47,9 +61,14 @@ final class SmallestResultCompressorTest extends TestCase
             }
         };
 
-        $compressorD = new class() implements CompressorInterface {
+        $compressorD = new class() implements CalledCompressorInterface {
             /** @var bool */
             public $called = false;
+
+            public function getCalled(): bool
+            {
+                return $this->called;
+            }
 
             public function compress(string $string): string
             {
@@ -68,14 +87,14 @@ final class SmallestResultCompressorTest extends TestCase
     /**
      * @dataProvider provideCompressors
      */
-    public function testCompress(string $expectedOutput, CompressorInterface ...$compressors): void
+    public function testCompress(string $expectedOutput, CalledCompressorInterface ...$compressors): void
     {
         $input = 'abcdefgh';
         $compressor = new SmallestResultCompressor(...$compressors);
         $actual = $compressor->compress($input);
 
         foreach ($compressors as $compressorX) {
-            self::assertTrue($compressorX->called);
+            self::assertTrue($compressorX->getCalled());
         }
 
         self::assertSame($expectedOutput, $actual);

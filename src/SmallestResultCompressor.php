@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace WyriHaximus\HtmlCompress\Compressor;
+namespace WyriHaximus\Compress;
 
-final class SmallestResultCompressor extends Compressor
+final class SmallestResultCompressor implements CompressorInterface
 {
     private const ZERO = 0;
 
@@ -16,7 +16,7 @@ final class SmallestResultCompressor extends Compressor
         $this->compressors = $compressors;
     }
 
-    protected function execute(string $string): string
+    public function compress(string $string): string
     {
         $result = $string;
         foreach ($this->compressors as $compressor) {

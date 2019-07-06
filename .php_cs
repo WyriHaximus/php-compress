@@ -8,7 +8,6 @@ return (function (): Config
     $paths = [
         __DIR__ . DIRECTORY_SEPARATOR . 'src',
         __DIR__ . DIRECTORY_SEPARATOR . 'tests',
-        __DIR__ . DIRECTORY_SEPARATOR . 'examples',
     ];
 
     return PhpCsFixerConfig::create()

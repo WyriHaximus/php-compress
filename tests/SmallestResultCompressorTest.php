@@ -2,13 +2,15 @@
 
 namespace WyriHaximus\Compress\Tests;
 
+use WyriHaximus\Compress\AbstractCompressorTest;
+use WyriHaximus\Compress\CompressorInterface;
+use WyriHaximus\Compress\ReturnCompressor;
 use WyriHaximus\Compress\SmallestResultCompressor;
-use WyriHaximus\TestUtilities\TestCase;
 
 /**
  * @internal
  */
-final class SmallestResultCompressorTest extends TestCase
+final class SmallestResultCompressorTest extends AbstractCompressorTest
 {
     public function provideCompressors(): iterable
     {
@@ -87,7 +89,7 @@ final class SmallestResultCompressorTest extends TestCase
     /**
      * @dataProvider provideCompressors
      */
-    public function testCompress(string $expectedOutput, CalledCompressorInterface ...$compressors): void
+    public function testCompressToSmallest(string $expectedOutput, CalledCompressorInterface ...$compressors): void
     {
         $input = 'abcdefgh';
         $compressor = new SmallestResultCompressor(...$compressors);
@@ -98,5 +100,10 @@ final class SmallestResultCompressorTest extends TestCase
         }
 
         self::assertSame($expectedOutput, $actual);
+    }
+
+    protected function getCompressor(): CompressorInterface
+    {
+        return new SmallestResultCompressor(new ReturnCompressor());
     }
 }

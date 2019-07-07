@@ -1,9 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace WyriHaximus\Compress\Tests;
+namespace WyriHaximus\Compress;
 
-use WyriHaximus\Compress\CompressorInterface;
-use WyriHaximus\TestUtilities\TestCase;
+use PHPUnit\Framework\TestCase;
 
 abstract class AbstractCompressorTest extends TestCase
 {
@@ -14,8 +13,6 @@ abstract class AbstractCompressorTest extends TestCase
 
     protected function setUp(): void
     {
-        parent::setUp();
-
         $this->compressor = $this->getCompressor();
     }
 

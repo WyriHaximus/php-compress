@@ -10,33 +10,14 @@
     },
      "mutators": {
          "@default": true,
-         "ArrayItemRemoval": {
+         "PublicVisibility": {
              "ignore": [
-                 "WyriHaximus\\HtmlCompress\\Factory::construct",
-                 "WyriHaximus\\HtmlCompress\\Factory::constructSmallest"
+                 "WyriHaximus\\Compress\\AbstractCompressorTest::testCompress"
              ]
          },
-         "CastString": {
+         "MethodCallRemoval": {
              "ignore": [
-                 "WyriHaximus\\HtmlCompress\\Compressor\\CssMinifierCompressor::execute",
-                 "WyriHaximus\\HtmlCompress\\Compressor\\JSqueezeCompressor::execute",
-                 "WyriHaximus\\HtmlCompress\\Compressor\\JSMinCompressor::execute",
-                 "WyriHaximus\\HtmlCompress\\Compressor\\JavaScriptPackerCompressor::execute"
-             ]
-         },
-         "Identical": {
-             "ignore": [
-                 "WyriHaximus\\HtmlCompress\\Compressor\\CssMinCompressor::execute"
-             ]
-         },
-         "LogicalAnd": {
-             "ignore": [
-                 "WyriHaximus\\HtmlCompress\\Compressor\\CssMinCompressor::execute"
-             ]
-         },
-         "TrueValue": {
-             "ignore": [
-                 "WyriHaximus\\HtmlCompress\\Factory::constructSmallest"
+                 "WyriHaximus\\Compress\\AbstractCompressorTest::testCompress"
              ]
          }
      }

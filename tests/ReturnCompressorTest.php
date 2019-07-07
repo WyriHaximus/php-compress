@@ -2,6 +2,7 @@
 
 namespace WyriHaximus\Compress\Tests;
 
+use WyriHaximus\Compress\AbstractCompressorTest;
 use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\Compress\ReturnCompressor;
 
@@ -19,6 +20,10 @@ final class ReturnCompressorTest extends AbstractCompressorTest
         yield 'spacing-in-the-middle' => [
           "<html>\r\t<h1>h            oi</h1>\r\n\t\r\n</html>",
           "<html>\r\t<h1>h            oi</h1>\r\n\t\r\n</html>",
+        ];
+        yield 'spacing-at-the-end' => [
+          "<html>\r\t<h1>hoi</h1>\r\n\t\r\n</html> ",
+          "<html>\r\t<h1>hoi</h1>\r\n\t\r\n</html> ",
         ];
     }
 

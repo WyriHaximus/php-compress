@@ -1,7 +1,7 @@
 Compress
 ========
 
-[![Build Status](https://travis-ci.org/WyriHaximus/php-compress.png)](https://travis-ci.org/WyriHaximus/php-compress)
+[![Build Status](https://travis-ci.com/WyriHaximus/php-compress.png)](https://travis-ci.com/WyriHaximus/php-compress)
 [![Latest Stable Version](https://poser.pugx.org/WyriHaximus/compress/v/stable.png)](https://packagist.org/packages/WyriHaximus/compress)
 [![Total Downloads](https://poser.pugx.org/WyriHaximus/compress/downloads.png)](https://packagist.org/packages/WyriHaximus/compress)
 [![Coverage Status](https://coveralls.io/repos/WyriHaximus/php-compress/badge.png)](https://coveralls.io/r/WyriHaximus/php-compress)

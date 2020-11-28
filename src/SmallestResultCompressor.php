@@ -1,15 +1,17 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace WyriHaximus\Compress;
+
+use function strlen;
 
 final class SmallestResultCompressor implements CompressorInterface
 {
     private const ZERO = 0;
 
-    /**
-     * @var CompressorInterface[]
-     */
-    private $compressors = [];
+    /** @var CompressorInterface[] */
+    private array $compressors = [];
 
     public function __construct(CompressorInterface ...$compressors)
     {
@@ -20,9 +22,9 @@ final class SmallestResultCompressor implements CompressorInterface
     {
         $result = $string;
         foreach ($this->compressors as $compressor) {
-            $resultLength = \strlen($result);
-            $currentResult = $compressor->compress($string);
-            $currentResultLength = \strlen($currentResult);
+            $resultLength        = strlen($result);
+            $currentResult       = $compressor->compress($string);
+            $currentResultLength = strlen($currentResult);
 
             if ($currentResultLength === self::ZERO) {
                 continue;

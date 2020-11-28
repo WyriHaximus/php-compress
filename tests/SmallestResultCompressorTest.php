@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace WyriHaximus\Compress\Tests;
 
@@ -12,11 +14,13 @@ use WyriHaximus\Compress\SmallestResultCompressor;
  */
 final class SmallestResultCompressorTest extends AbstractCompressorTest
 {
+    /**
+     * @return iterable<array<string|CalledCompressorInterface>>
+     */
     public function provideCompressors(): iterable
     {
-        $compressorA = new class() implements CalledCompressorInterface {
-            /** @var bool */
-            public $called = false;
+        $compressorA = new class () implements CalledCompressorInterface {
+            public bool $called = false;
 
             public function getCalled(): bool
             {
@@ -30,9 +34,8 @@ final class SmallestResultCompressorTest extends AbstractCompressorTest
                 return 'ab';
             }
         };
-        $compressorB = new class() implements CalledCompressorInterface {
-            /** @var bool */
-            public $called = false;
+        $compressorB = new class () implements CalledCompressorInterface {
+            public bool $called = false;
 
             public function getCalled(): bool
             {
@@ -46,9 +49,8 @@ final class SmallestResultCompressorTest extends AbstractCompressorTest
                 return 'efgh';
             }
         };
-        $compressorC = new class() implements CalledCompressorInterface {
-            /** @var bool */
-            public $called = false;
+        $compressorC = new class () implements CalledCompressorInterface {
+            public bool $called = false;
 
             public function getCalled(): bool
             {
@@ -63,9 +65,8 @@ final class SmallestResultCompressorTest extends AbstractCompressorTest
             }
         };
 
-        $compressorD = new class() implements CalledCompressorInterface {
-            /** @var bool */
-            public $called = false;
+        $compressorD = new class () implements CalledCompressorInterface {
+            public bool $called = false;
 
             public function getCalled(): bool
             {
@@ -91,9 +92,9 @@ final class SmallestResultCompressorTest extends AbstractCompressorTest
      */
     public function testCompressToSmallest(string $expectedOutput, CalledCompressorInterface ...$compressors): void
     {
-        $input = 'abcdefgh';
+        $input      = 'abcdefgh';
         $compressor = new SmallestResultCompressor(...$compressors);
-        $actual = $compressor->compress($input);
+        $actual     = $compressor->compress($input);
 
         foreach ($compressors as $compressorX) {
             self::assertTrue($compressorX->getCalled());

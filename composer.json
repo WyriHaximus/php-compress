@@ -13,11 +13,11 @@
         }
     ],
     "require": {
-        "php": "^8 || ^7.4",
-        "phpunit/phpunit": "^9.4"
+        "php": "^8 || ^7.4"
     },
     "require-dev": {
-        "wyrihaximus/test-utilities": "^3.3.1"
+        "wyrihaximus/test-utilities": "^3.3.1",
+        "phpunit/phpunit": "^9.4"
     },
     "config": {
         "platform": {

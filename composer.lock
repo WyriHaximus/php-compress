@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f435816ea0131d91974e297c3fa47d92",
+    "content-hash": "20b480e12c7aa56ce44ca2cff4809f19",
     "packages": [
         {
             "name": "wyrihaximus/compress-contracts",
@@ -7876,6 +7876,58 @@
                 }
             ],
             "time": "2020-11-23T16:02:45+00:00"
+        },
+        {
+            "name": "wyrihaximus/compress-test-utilities",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WyriHaximus/php-compress-test-utilities.git",
+                "reference": "de6cd6d1a8edbbc6a99fc6b6ff2cdffa3814456d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WyriHaximus/php-compress-test-utilities/zipball/de6cd6d1a8edbbc6a99fc6b6ff2cdffa3814456d",
+                "reference": "de6cd6d1a8edbbc6a99fc6b6ff2cdffa3814456d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8 || ^7.4",
+                "wyrihaximus/compress-contracts": "^1.0",
+                "wyrihaximus/test-utilities": "^3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WyriHaximus\\Compress\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com",
+                    "homepage": "http://wyrihaximus.net/"
+                }
+            ],
+            "description": "Compress test utilities",
+            "keywords": [
+                "compress"
+            ],
+            "support": {
+                "issues": "https://github.com/WyriHaximus/php-compress-test-utilities/issues",
+                "source": "https://github.com/WyriHaximus/php-compress-test-utilities/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/WyriHaximus",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-12-24T16:27:03+00:00"
         },
         {
             "name": "wyrihaximus/phpstan-rules-wrapper",

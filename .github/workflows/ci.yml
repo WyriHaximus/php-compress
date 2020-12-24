@@ -5,6 +5,7 @@ on:
 jobs:
   composer-install:
     strategy:
+      fail-fast: false
       matrix:
         php: [7.4, 8.0-rc]
         composer: [lowest, current, highest]
@@ -29,6 +30,7 @@ jobs:
         if: matrix.composer == 'highest'
   qa:
     strategy:
+      fail-fast: false
       matrix:
         php: [7.4, 8.0-rc]
         composer: [lowest, current, highest]

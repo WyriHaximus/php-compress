@@ -6,19 +6,15 @@
         ]
     },
     "logs": {
-        "text": "infection-log.txt"
+        "text": "./var/infection.log",
+        "summary": "./var/infection-summary.log",
+        "json": "./var/infection.json",
+        "perMutator": "./var/infection-per-mutator.md"
     },
-     "mutators": {
-         "@default": true,
-         "PublicVisibility": {
-             "ignore": [
-                 "WyriHaximus\\Compress\\AbstractCompressorTest::testCompress"
-             ]
-         },
-         "MethodCallRemoval": {
-             "ignore": [
-                 "WyriHaximus\\Compress\\AbstractCompressorTest::testCompress"
-             ]
-         }
-     }
+    "mutators": {
+        "@default": false
+    },
+    "phpUnit": {
+        "configDir": "./etc/qa/"
+    }
 }

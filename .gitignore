@@ -1,8 +1,4 @@
-# php (composer)
+var/*
+!var/.gitkeep
 vendor/
-
-# php (phpcs fixer)
-.php_cs.cache
-
-# ide
-.idea/
+etc/qa/.phpunit.result.cache

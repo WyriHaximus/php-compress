@@ -1,10 +1,10 @@
 Compress
 ========
 
-[![Build Status](https://travis-ci.com/WyriHaximus/php-compress.png)](https://travis-ci.com/WyriHaximus/php-compress)
-[![Latest Stable Version](https://poser.pugx.org/WyriHaximus/compress/v/stable.png)](https://packagist.org/packages/WyriHaximus/compress)
-[![Total Downloads](https://poser.pugx.org/WyriHaximus/compress/downloads.png)](https://packagist.org/packages/WyriHaximus/compress)
-[![Coverage Status](https://coveralls.io/repos/WyriHaximus/php-compress/badge.png)](https://coveralls.io/r/WyriHaximus/php-compress)
+![Continuous Integration](https://github.com/wyrihaximus/php-compress/workflows/Continuous%20Integration/badge.svg)
+[![Latest Stable Version](https://poser.pugx.org/wyrihaximus/compress/v/stable.png)](https://packagist.org/packages/wyrihaximus/compress)
+[![Total Downloads](https://poser.pugx.org/wyrihaximus/compress/downloads.png)](https://packagist.org/packages/wyrihaximus/compress/stats)
+[![Type Coverage](https://shepherd.dev/github/WyriHaximus/php-compress/coverage.svg)](https://shepherd.dev/github/WyriHaximus/php-compress)
 [![License](https://poser.pugx.org/wyrihaximus/compress/license.png)](https://packagist.org/packages/wyrihaximus/compress)
 
 ## Installation ##
@@ -12,12 +12,12 @@ Compress
 To install via [Composer](http://getcomposer.org/), use the command below, it will automatically detect the latest version and bind it with `~`.
 
 ```
-composer require wyrihaximus/compress 
+composer require wyrihaximus/compress
 ```
 
 ## License ##
 
-Copyright 2019 [Cees-Jan Kiewiet](http://wyrihaximus.net/)
+Copyright 2024 [Cees-Jan Kiewiet](http://wyrihaximus.net/)
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation

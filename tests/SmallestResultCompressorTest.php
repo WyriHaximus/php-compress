@@ -4,19 +4,15 @@ declare(strict_types=1);
 
 namespace WyriHaximus\Compress\Tests;
 
-use WyriHaximus\Compress\AbstractCompressorTest;
 use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\Compress\ReturnCompressor;
 use WyriHaximus\Compress\SmallestResultCompressor;
+use WyriHaximus\Compress\TestUtilities\AbstractCompressorTest;
 
-/**
- * @internal
- */
+/** @internal */
 final class SmallestResultCompressorTest extends AbstractCompressorTest
 {
-    /**
-     * @return iterable<array<string|CalledCompressorInterface>>
-     */
+    /** @return iterable<array<string|CalledCompressorInterface>> */
     public function provideCompressors(): iterable
     {
         $compressorA = new class () implements CalledCompressorInterface {
@@ -87,9 +83,7 @@ final class SmallestResultCompressorTest extends AbstractCompressorTest
         yield ['abcd', $compressorC, $compressorB, $compressorB];
     }
 
-    /**
-     * @dataProvider provideCompressors
-     */
+    /** @dataProvider provideCompressors */
     public function testCompressToSmallest(string $expectedOutput, CalledCompressorInterface ...$compressors): void
     {
         $input      = 'abcdefgh';

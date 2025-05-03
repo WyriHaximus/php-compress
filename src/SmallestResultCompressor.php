@@ -6,12 +6,12 @@ namespace WyriHaximus\Compress;
 
 use function strlen;
 
-final class SmallestResultCompressor implements CompressorInterface
+final readonly class SmallestResultCompressor implements CompressorInterface
 {
-    private const ZERO = 0;
+    private const int ZERO = 0;
 
-    /** @var CompressorInterface[] */
-    private array $compressors = [];
+    /** @var array<CompressorInterface> */
+    private array $compressors;
 
     public function __construct(CompressorInterface ...$compressors)
     {

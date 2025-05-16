@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace WyriHaximus\Compress\Tests;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\Compress\ReturnCompressor;
 use WyriHaximus\Compress\TestUtilities\AbstractCompressorTest;
@@ -12,7 +14,7 @@ use WyriHaximus\Compress\TestUtilities\AbstractCompressorTest;
 final class ReturnCompressorTest extends AbstractCompressorTest
 {
     /** @return iterable<string, array<string>> */
-    public function providerReturn(): iterable
+    public static function providerReturn(): iterable
     {
         yield 'spacing-at-the-start' => [
             " <html>\r\t<body>\n\t\t<h1>hoi</h1>\r\n\t</body>\r\n</html>",
@@ -30,8 +32,9 @@ final class ReturnCompressorTest extends AbstractCompressorTest
         ];
     }
 
-    /** @dataProvider providerReturn */
-    public function testReturn(string $input, string $expected): void
+    #[Test]
+    #[DataProvider('providerReturn')]
+    public function return(string $input, string $expected): void
     {
         $actual = (new ReturnCompressor())->compress($input);
         self::assertSame($expected, $actual);

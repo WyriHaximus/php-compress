@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace WyriHaximus\Compress\Tests;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\Compress\ReturnCompressor;
 use WyriHaximus\Compress\SmallestResultCompressor;
@@ -13,10 +15,10 @@ use WyriHaximus\Compress\TestUtilities\AbstractCompressorTest;
 final class SmallestResultCompressorTest extends AbstractCompressorTest
 {
     /** @return iterable<array<string|CalledCompressorInterface>> */
-    public function provideCompressors(): iterable
+    public static function provideCompressors(): iterable
     {
         $compressorA = new class () implements CalledCompressorInterface {
-            public bool $called = false;
+            private bool $called = false;
 
             public function getCalled(): bool
             {
@@ -31,7 +33,7 @@ final class SmallestResultCompressorTest extends AbstractCompressorTest
             }
         };
         $compressorB = new class () implements CalledCompressorInterface {
-            public bool $called = false;
+            private bool $called = false;
 
             public function getCalled(): bool
             {
@@ -46,7 +48,7 @@ final class SmallestResultCompressorTest extends AbstractCompressorTest
             }
         };
         $compressorC = new class () implements CalledCompressorInterface {
-            public bool $called = false;
+            private bool $called = false;
 
             public function getCalled(): bool
             {
@@ -62,7 +64,7 @@ final class SmallestResultCompressorTest extends AbstractCompressorTest
         };
 
         $compressorD = new class () implements CalledCompressorInterface {
-            public bool $called = false;
+            private bool $called = false;
 
             public function getCalled(): bool
             {
@@ -83,8 +85,9 @@ final class SmallestResultCompressorTest extends AbstractCompressorTest
         yield ['abcd', $compressorC, $compressorB, $compressorB];
     }
 
-    /** @dataProvider provideCompressors */
-    public function testCompressToSmallest(string $expectedOutput, CalledCompressorInterface ...$compressors): void
+    #[Test]
+    #[DataProvider('provideCompressors')]
+    public function compressToSmallest(string $expectedOutput, CalledCompressorInterface ...$compressors): void
     {
         $input      = 'abcdefgh';
         $compressor = new SmallestResultCompressor(...$compressors);

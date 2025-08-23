@@ -36,7 +36,7 @@ final class ReturnCompressorTest extends AbstractCompressorTest
     #[DataProvider('providerReturn')]
     public function return(string $input, string $expected): void
     {
-        $actual = (new ReturnCompressor())->compress($input);
+        $actual = new ReturnCompressor()->compress($input);
         self::assertSame($expected, $actual);
     }
 

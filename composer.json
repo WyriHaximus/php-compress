@@ -1,56 +1,57 @@
 {
-    "name": "wyrihaximus/compress",
-    "description": "Compress marker interface and utility compressors",
-    "license": "MIT",
-    "keywords": [
-        "compress"
-    ],
-    "authors": [
-        {
-            "name": "Cees-Jan Kiewiet",
-            "email": "ceesjank@gmail.com",
-            "homepage": "http://wyrihaximus.net/"
-        }
-    ],
-    "require": {
-        "php": "^8.3",
-        "wyrihaximus/compress-contracts": "^1.0"
-    },
-    "require-dev": {
-        "wyrihaximus/compress-test-utilities": "^3.1.0",
-        "wyrihaximus/makefiles": "^0.5.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "WyriHaximus\\Compress\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "WyriHaximus\\Compress\\Tests\\": "tests/"
-        }
-    },
-    "config": {
-        "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "ergebnis/composer-normalize": true,
-            "infection/extension-installer": true,
-            "localheinz/composer-normalize": true,
-            "ocramius/package-versions": true,
-            "phpstan/extension-installer": true,
-            "wyrihaximus/makefiles": true
-        },
-        "platform": {
-            "php": "8.3.13"
-        },
-        "sort-packages": true
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "composer normalize"
-        ],
-        "post-update-cmd": [
-            "composer normalize"
-        ]
+  "name": "wyrihaximus/compress",
+  "description": "Compress marker interface and utility compressors",
+  "license": "MIT",
+  "keywords": [
+    "compress"
+  ],
+  "authors": [
+    {
+      "name": "Cees-Jan Kiewiet",
+      "email": "ceesjank@gmail.com",
+      "homepage": "http://wyrihaximus.net/"
     }
+  ],
+  "require": {
+    "php": "^8.4",
+    "wyrihaximus/compress-contracts": "^1.0"
+  },
+  "require-dev": {
+    "wyrihaximus/compress-test-utilities": "^3.2.0",
+    "wyrihaximus/makefiles": "^0.6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "WyriHaximus\\Compress\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "WyriHaximus\\Compress\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "ergebnis/composer-normalize": true,
+      "infection/extension-installer": true,
+      "localheinz/composer-normalize": true,
+      "ocramius/package-versions": true,
+      "phpstan/extension-installer": true,
+      "wyrihaximus/makefiles": true,
+      "wyrihaximus/test-utilities": true
+    },
+    "platform": {
+      "php": "8.4.13"
+    },
+    "sort-packages": true
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "make on-install-or-update || true"
+    ],
+    "post-update-cmd": [
+      "make on-install-or-update || true"
+    ]
+  }
 }

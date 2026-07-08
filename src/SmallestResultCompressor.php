@@ -6,6 +6,7 @@ namespace WyriHaximus\Compress;
 
 use function strlen;
 
+/** @api */
 final readonly class SmallestResultCompressor implements CompressorInterface
 {
     private const int ZERO = 0;

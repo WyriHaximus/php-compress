@@ -17,7 +17,7 @@ composer require wyrihaximus/compress
 
 ## License ##
 
-Copyright 2024 [Cees-Jan Kiewiet](http://wyrihaximus.net/)
+Copyright 2026 [Cees-Jan Kiewiet](http://wyrihaximus.net/)
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation

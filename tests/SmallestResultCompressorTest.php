@@ -11,7 +11,6 @@ use WyriHaximus\Compress\ReturnCompressor;
 use WyriHaximus\Compress\SmallestResultCompressor;
 use WyriHaximus\Compress\TestUtilities\AbstractCompressorTest;
 
-/** @internal */
 final class SmallestResultCompressorTest extends AbstractCompressorTest
 {
     /** @return iterable<array<string|CalledCompressorInterface>> */

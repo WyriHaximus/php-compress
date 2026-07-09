@@ -10,7 +10,6 @@ use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\Compress\ReturnCompressor;
 use WyriHaximus\Compress\TestUtilities\AbstractCompressorTest;
 
-/** @internal */
 final class ReturnCompressorTest extends AbstractCompressorTest
 {
     /** @return iterable<string, array<string>> */

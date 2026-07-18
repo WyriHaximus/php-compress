@@ -18,7 +18,7 @@
   },
   "require-dev": {
     "wyrihaximus/compress-test-utilities": "^4.0.0",
-    "wyrihaximus/makefiles": "^0.12.3"
+    "wyrihaximus/makefiles": "^0.13.1"
   },
   "autoload": {
     "psr-4": {

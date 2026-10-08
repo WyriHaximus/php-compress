@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "11d059c818f657f0b0763d3989854fb9",
+    "content-hash": "817febf41d8aa8e8178495b788f08bed",
     "packages": [
         {
             "name": "wyrihaximus/compress-contracts",
@@ -9139,16 +9139,16 @@
         },
         {
             "name": "wyrihaximus/makefiles",
-            "version": "0.13.3",
+            "version": "0.15.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/Makefiles.git",
-                "reference": "258162a89005f0c0ff920d00e2e5cd851ebb74cf"
+                "reference": "87dcd19b99012b7dd08df68a4914fd0e6b08f395"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/Makefiles/zipball/258162a89005f0c0ff920d00e2e5cd851ebb74cf",
-                "reference": "258162a89005f0c0ff920d00e2e5cd851ebb74cf",
+                "url": "https://api.github.com/repos/WyriHaximus/Makefiles/zipball/87dcd19b99012b7dd08df68a4914fd0e6b08f395",
+                "reference": "87dcd19b99012b7dd08df68a4914fd0e6b08f395",
                 "shasum": ""
             },
             "require": {
@@ -9160,7 +9160,7 @@
                 "infection/infection": "<0.32.0"
             },
             "require-dev": {
-                "wyrihaximus/test-utilities": "^13.4.0"
+                "wyrihaximus/test-utilities": "^14.4.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -9189,7 +9189,7 @@
             "description": "🧱 Makefile building blocks",
             "support": {
                 "issues": "https://github.com/WyriHaximus/Makefiles/issues",
-                "source": "https://github.com/WyriHaximus/Makefiles/tree/0.13.3"
+                "source": "https://github.com/WyriHaximus/Makefiles/tree/0.15.2"
             },
             "funding": [
                 {
@@ -9197,7 +9197,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-07-29T18:27:30+00:00"
+            "time": "2026-10-08T05:32:38+00:00"
         },
         {
             "name": "wyrihaximus/phpstan-no-safe",
